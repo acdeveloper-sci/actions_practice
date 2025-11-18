@@ -1,0 +1,20 @@
+name: MacOS Server CI
+
+on: [push]
+
+jobs:
+  macos-test:
+    runs-on: macos-latest-large
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5.0.0
+      
+      - name: check stuffs
+        run: |
+          ls -la
+          sw_vers
+          system_profiler | grep "Hardware"
+          echo "===================================="
+          echo "===================================="
+          system_profiler
