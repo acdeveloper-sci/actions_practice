@@ -9,12 +9,13 @@ jobs:
     steps:
       - name: Hola Mundo
         run: echo "Hello, World!"
+
       - name: touch file
         run: touch hola.txt
 
       - name: Set text
         run: echo "Hola World!" > hola.txt
-      
+
       - name: Read file
         run: cat hola.txt
 
@@ -22,5 +23,8 @@ jobs:
     runs-on: ubuntu-latest
     needs: [hola]
     steps:
+      - name: Checkout
+        uses: actions/checkout@v5.0.0
+
       - name: ls
         run: ls -la
