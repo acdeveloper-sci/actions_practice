@@ -6,6 +6,7 @@ on: [push]
 
 jobs:
   say-hello:
+    runs-on: ubuntu-latest
 
     services:
       mysql:
@@ -14,3 +15,7 @@ jobs:
           MYSQL_ROOT_PASSWORD: example
         ports:
           - 3306:3306
+
+    steps:
+      - name:
+        run: echo "Al instructor se le olvidan cosas"
