@@ -25,5 +25,6 @@ jobs:
           php-version: 8.4
           extensions: mbstring, bcmath, pdo, pdo_mysql
 
-      - name: Install packages
-        run: composer install --no-interaction
+      # No tengo composer.json
+      # - name: Install packages
+      #   run: composer install --no-interaction
