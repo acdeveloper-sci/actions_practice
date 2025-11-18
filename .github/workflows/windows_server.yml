@@ -1,0 +1,17 @@
+name: Windows Server CI
+
+on: [push]
+
+jobs:
+  laravel-test:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5.0.0
+      
+      - name: check stuffs
+        run: |
+          dir
+          systeminfo
+          slmgr /dlv
