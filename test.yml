@@ -1,0 +1,36 @@
+# Registro de un estudiante
+---
+
+nombre: Martin D'vloper
+
+edad: 26
+
+hobbies:
+  - pintura
+  - tocar música
+  - cocina
+
+programacion:
+  java: Intermedio
+  python: Avanzado
+  javascript: Principiante
+
+comida_favorita:
+  - verduras: tomates
+  - frutas:
+      cítricos: naranjas
+      tropicales: plátanos
+  - nueces: cacahuetes
+  - dulces: pasas
+
+scripts >
+  echo "Hello, World!"
+  echo "Person name: $person.name"
+  ls -la
+
+scripts1: |
+  apt-get update
+  apt-get install -y nginx
+
+volumes:
+  db-data:
