@@ -1,0 +1,25 @@
+name: Larave CI
+
+on: [push]
+
+jobs:
+  mysql:
+    image: mysql:latest
+    ports:
+      - 3006:3006
+    env:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: laravel
+
+  steps:
+    - name: Checkout
+      uses: actions/checkout@v5.0.0
+    
+    - name: Setup PHP
+      uses: shivammathur/setup-php@2.35.5
+      with:
+        php-version: 8.4
+        extentions: mbstring, bcmath, pdo, pdo_mysql
+
+    - name: Install packages
+      run: compose install --no-interaction
