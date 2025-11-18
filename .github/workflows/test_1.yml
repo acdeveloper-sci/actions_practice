@@ -1,4 +1,4 @@
-# Variables de entorno
+# Variables de entorno - Aplicacion
 
 name: Ejemplo de Composite Action
 
@@ -8,17 +8,11 @@ jobs:
   say-hello:
     runs-on: ubuntu-latest
 
-    env:
-      MY_VAR: Mi variable de entorno
-
     steps:
-      - name: Workflow vars
-        env:
-          STEP_MY_VAR: Nivel step
-        run: echo "Valor -> $MY_VAR $STEP_MY_VAR"
-
-      - name: Repo var
-        run: echo "Valor Repo -> ${{ vars.MY_VAR_REPO_1 }}"
-
-      - name: Secret var
-        run: echo "Valor Secret -> ${{ secrets.MY_SECRET_KEY }}"
+      - name: SSH connection
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_KEY }}" >> ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H ${{ secrets.IP_HOST }} >> ~/.ssh/known_hosts
+          cat ~/.ssh/known_hosts

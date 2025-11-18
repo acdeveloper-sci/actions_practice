@@ -1,0 +1,24 @@
+# Variables de entorno
+
+name: Ejemplo de Composite Action
+
+on: [push]
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+
+    env:
+      MY_VAR: Mi variable de entorno
+
+    steps:
+      - name: Workflow vars
+        env:
+          STEP_MY_VAR: Nivel step
+        run: echo "Valor -> $MY_VAR $STEP_MY_VAR"
+
+      - name: Repo var
+        run: echo "Valor Repo -> ${{ vars.MY_VAR_REPO_1 }}"
+
+      - name: Secret var
+        run: echo "Valor Secret -> ${{ secrets.MY_SECRET_KEY }}"
