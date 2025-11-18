@@ -1,4 +1,4 @@
-# Servicios
+# Variables de entorno
 
 name: Ejemplo de Composite Action
 
@@ -8,19 +8,9 @@ jobs:
   say-hello:
     runs-on: ubuntu-latest
 
-    services:
-      mysql:
-        image: mysql:latest
-        env:
-          MYSQL_ROOT_PASSWORD: example
-        ports:
-          - 3306:3306
-      
-      redis:
-        image: redis:latest
-        ports:
-          - 6379:6379
+    env:
+      MY_VAR: Mi variable de entorno
 
     steps:
       - name: Test
-        run: echo "Al instructor se le olvidan cosas"
+        run: echo "Valor: ${{ MY_VAR }}"
