@@ -1,0 +1,11 @@
+# Template
+
+name: "My action"
+description: "Test my action"
+
+runs:
+  using: "composite"
+
+  steps:
+    - name: Hola Mundo
+      run: echo "Hello, World!"
