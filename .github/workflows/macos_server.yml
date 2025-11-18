@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   macos-test:
-    runs-on: macos-latest-large
+    runs-on: macos-15-large
 
     steps:
       - name: Checkout
