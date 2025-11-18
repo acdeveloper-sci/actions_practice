@@ -1,0 +1,26 @@
+# Servicios
+
+name: Ejemplo de Composite Action
+
+on: [push]
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+
+    services:
+      mysql:
+        image: mysql:latest
+        env:
+          MYSQL_ROOT_PASSWORD: example
+        ports:
+          - 3306:3306
+      
+      redis:
+        image: redis:latest
+        ports:
+          - 6379:6379
+
+    steps:
+      - name: Test
+        run: echo "Al instructor se le olvidan cosas"
