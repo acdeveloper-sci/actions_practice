@@ -38,4 +38,6 @@ jobs:
         uses: actions/upload-artifact@v5.0.0
         with:
           name: artifacts
-          path: README.md
+          path: |
+            README.md
+            backup_workflows/*
