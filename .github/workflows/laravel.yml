@@ -1,15 +1,19 @@
-name: Larave CI
+name: Laravel CI
 
 on: [push]
 
 jobs:
-  mysql:
-    image: mysql:latest
-    ports:
-      - 3006:3006
-    env:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: laravel
+  laravel-test:
+    runs-on: ubuntu-latest 
+  
+  services:
+    mysql:
+      image: mysql:latest
+      ports:
+        - 3006:3006
+      env:
+        MYSQL_ROOT_PASSWORD: root
+        MYSQL_DATABASE: laravel
 
   steps:
     - name: Checkout
