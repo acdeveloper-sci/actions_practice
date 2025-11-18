@@ -10,3 +10,9 @@ runs:
     - name: Hola Mundo
       run: echo "Hello, World!"
       shell: bash
+
+    - name: run script
+      run: |
+        chmod +x script.sh
+        ./script.sh
+      shell: bash
