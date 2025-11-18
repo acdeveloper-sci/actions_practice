@@ -6,7 +6,6 @@ on: [push]
 
 jobs:
   say-hello:
-    runs-on: ubuntu-latest
 
     services:
       mysql:
