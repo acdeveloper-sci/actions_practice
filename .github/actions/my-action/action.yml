@@ -9,3 +9,4 @@ runs:
   steps:
     - name: Hola Mundo
       run: echo "Hello, World!"
+      shell: bash
